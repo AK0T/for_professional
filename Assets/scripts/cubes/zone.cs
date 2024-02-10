@@ -9,12 +9,12 @@ using UnityEngine;
 
 public class zone : MonoBehaviour
 {
-    public GameObject cube;
-    private Vector3 cubePos;
+    public List <Transform> cube;
+    [SerializeField] private List <Vector3> cubePos;
     [SerializeField]
-    private Vector3 startPos;
+    private List <Vector3> startPos;
     [SerializeField]
-    private Vector3 endPos;
+    private List <Vector3> endPos;
     private float step = 0.01f;
     private float progress;
     private bool onMove = false;
@@ -23,73 +23,99 @@ public class zone : MonoBehaviour
 
     private void Start()
     {
+        Transform[] obj = transform.GetComponentsInChildren<Transform>();
+        for (int i = 0; i < obj.Length; i++)
+        {
+            if (obj[i].tag == "cube")
+            {
+                cube.Add(obj[i]);
+            }
+        }
+        for (int i = 0; i < cube.Count; i++)
+        {
+            cubePos.Add(cube[i].transform.position);
+        }
         onMove = false;
-        cubePos = cube.transform.position;
         collider = GetComponent<Collider>();
     }
 
-    public void FixedUpdate()
-    {
-        if (onMove)
-        {
-            cube.transform.position = Vector3.Lerp(startPos, endPos, progress);
+
+     public void FixedUpdate()
+     {
+         if (onMove)
+         {
+            for (int i = 0; i < cube.Count; i++)
+            {
+                cube[i].transform.position = Vector3.Lerp(startPos[i], endPos[i], progress);
+            }
             progress += step;
         }
     }
 
-    public void OnMouseDown()
-    {
-        startPos = cube.transform.position;
-        dir = DirectionCube(cubePos); // получаем напревление кубика 
-        if (dir == "Horizontal") 
-        {
-            if (cubePos.x < 0) 
-            {
-                endPos = new Vector3(cube.transform.position.x + 0.3f, cube.transform.position.y, cube.transform.position.z); // двигается  вправо
-            }
-            else
-            {
-                endPos = new Vector3(cube.transform.position.x - 0.3f, cube.transform.position.y, cube.transform.position.z); // двигается вправо
-            }
-        }
-
-        if (dir == "Vertical")
-        {
-            if (cubePos.z < 0)
-            {
-                endPos = new Vector3(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z + 0.3f); // двигается вниз
-            }
-            else
-            {
-                endPos = new Vector3(cube.transform.position.x, cube.transform.position.y, cube.transform.position.z - 0.3f);// двигается вверх
-            }
-        }
+     public void OnMouseDown()
+     {
+        dir = DirectionCube(cube[0].transform.position);
+        OnStartPos(cube, startPos);
+        onEndPos(dir, endPos, cube);
         onMove = true;
         collider.enabled = false;
+     }
+
+     public string DirectionCube(Vector3 direct) // проверяем направление кубика
+     {
+         if (direct.x < 0)
+         {
+             direct.x = direct.x * -1;
+         }
+         if (direct.z < 0)
+         {
+             direct.z = direct.z * -1;
+         }
+         if (direct.x > direct.z)
+         {
+             return "Horizontal";
+         }
+         else
+         {
+             return "Vertical";
+         }
+     }
+
+    private void OnStartPos(List<Transform> obj, List<Vector3> startpos)
+    {
+        for (int i = 0; i < obj.Count; i++)
+        {
+            startPos.Add(obj[i].transform.position);
+        }
     }
 
-    public string DirectionCube(Vector3 direct) // проверяем направление кубика
-    {
-        if (direct.x < 0)
-        {
-            direct.x = direct.x * -1;
-        }
-        if (direct.z < 0)
-        {
-            direct.z = direct.z * -1;
-        }
-        if (direct.x > direct.z)
-        {
-            return "Horizontal";
-        }
-        else
-        {
-            return "Vertical";
-        }
-    }
 
-    private void onEndPos(string dir)
-    {
-
+     private void onEndPos(string dir, List<Vector3> endpos, List<Transform> obj)
+     {
+        for (int i = 0; i < obj.Count; i++)
+        {
+            if (dir == "Horizontal")
+            {
+                if (obj[i].transform.position.x < 0)
+                {
+                    endPos.Add(new Vector3(obj[i].transform.position.x + 0.31f, obj[i].transform.position.y, obj[i].transform.position.z));
+                }
+                else
+                {
+                    endPos.Add(new Vector3(obj[i].transform.position.x - 0.31f, obj[i].transform.position.y, obj[i].transform.position.z));
+                }
+            }
+            else
+            {
+                if (obj[i].transform.position.z < 0)
+                {
+                    endPos.Add(new Vector3(obj[i].transform.position.x, obj[i].transform.position.y, obj[i].transform.position.z + 0.32f));
+                }
+                else
+                {
+                    endPos.Add(new Vector3(obj[i].transform.position.x, obj[i].transform.position.y, obj[i].transform.position.z - 0.32f));
+                }
+            }
+        }
     }
 }

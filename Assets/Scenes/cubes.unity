@@ -119,11 +119,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13312898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+  m_PrefabInstance: {fileID: 1926450313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &17252671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4180330986342628, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
   m_PrefabInstance: {fileID: 1669728866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &27469735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+  m_PrefabInstance: {fileID: 1669728866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &27469738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27469735}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.19999997, z: 0.99999994}
+  m_Center: {x: 0, y: 0.100000165, z: 0}
 --- !u!1001 &40559852
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -643,9 +674,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a4026defe651a42809eeed4dc59314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 670203106}
-  startPos: {x: 0, y: 0, z: 0}
-  endPos: {x: 0, y: 0, z: 0}
+  cube: []
+  cubePos: []
+  startPos: []
+  endPos: []
 --- !u!1001 &509732029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,9 +818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a4026defe651a42809eeed4dc59314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1495299074}
-  startPos: {x: 0, y: 0, z: 0}
-  endPos: {x: 0, y: 0, z: 0}
+  cube: []
+  cubePos: []
+  startPos: []
+  endPos: []
 --- !u!1001 &547454339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,7 +979,7 @@ GameObject:
   - component: {fileID: 670203107}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1127,7 +1160,7 @@ GameObject:
   - component: {fileID: 830459052}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1356,13 +1389,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1264304741}
   m_SourcePrefab: {fileID: 100100000, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
 --- !u!4 &927700488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4180330986342628, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
   m_PrefabInstance: {fileID: 1926450313}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &927700491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13312898}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.19999997, z: 0.99999994}
+  m_Center: {x: 0, y: 0.100000165, z: 0}
 --- !u!1001 &1021940677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1503,9 +1560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a4026defe651a42809eeed4dc59314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 1660491260}
-  startPos: {x: 0, y: 0, z: 0}
-  endPos: {x: 0, y: 0, z: 0}
+  cube: []
+  cubePos: []
+  startPos: []
+  endPos: []
 --- !u!4 &1054486798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4180330986342628, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
@@ -1659,6 +1717,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4180330986342628, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
   m_PrefabInstance: {fileID: 1849149923}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1264304738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+  m_PrefabInstance: {fileID: 875122878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1264304741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264304738}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99999994, y: 0.19999997, z: 0.99999994}
+  m_Center: {x: 0, y: 0.100000106, z: 0}
 --- !u!4 &1296931683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4180330986342628, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
@@ -1720,7 +1804,7 @@ GameObject:
   - component: {fileID: 1495299075}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1827,7 +1911,7 @@ GameObject:
   - component: {fileID: 1660491261}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: cube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1931,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
@@ -2079,7 +2163,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 27469738}
   m_SourcePrefab: {fileID: 100100000, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
 --- !u!4 &1686733279 stripped
 Transform:
@@ -2289,9 +2376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a4026defe651a42809eeed4dc59314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cube: {fileID: 830459051}
-  startPos: {x: 0, y: 0, z: 0}
-  endPos: {x: 0, y: 0, z: 0}
+  cube: []
+  cubePos: []
+  startPos: []
+  endPos: []
 --- !u!65 &1787410488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2612,7 +2700,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1569838882627388, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 927700491}
   m_SourcePrefab: {fileID: 100100000, guid: 72b0d84d8d002be4d9144403456c0541, type: 3}
 --- !u!1 &2066376272
 GameObject:

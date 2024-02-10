@@ -388,7 +388,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.2.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.2.7f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/scripts/ball.cs"
-"Assets/scripts/cubes/cube.cs"
+"Assets/scripts/cubes/finishcell.cs"
 "Assets/scripts/cubes/zone.cs"
 "Assets/scripts/spawn_ball.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
