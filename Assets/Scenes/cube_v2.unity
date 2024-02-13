@@ -394,13 +394,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c178af293db06444ea7c5b71d7dc2397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosX: 3
-  PosZ: 3
+  PosX: 2
+  PosZ: 2
   DirPosX: {x: 0, y: 0, z: 0}
   DirPosZ: {x: 0, y: 0, z: 0}
   TimeDirPosX: {x: 0, y: 0, z: 0}
   TimeDirPosZ: {x: 0, y: 0, z: 0}
   cell: {fileID: 296144545583430071, guid: f6f5f35df3d1f5d4eaeb88b853a2c170, type: 3}
+  cube: {fileID: 1863575745939457151, guid: dab2fd06071a3484f92fb010c382f68e, type: 3}
+  spawnedCube: []
 --- !u!4 &1113874054
 Transform:
   m_ObjectHideFlags: 0
